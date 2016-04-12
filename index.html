@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>React demo</title>
+        <style media="screen">
+            h1 {
+                text-align: center;
+            }
+            ul {
+                list-style: none;
+                width: 180px;
+                margin: 0 auto;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Demo List</h1>
+        <div id='app' height="800" width='800'></div>
+        <script src="../node_modules/react/dist/react-with-addons.js" charset="utf-8"></script>
+        <script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
+        <script src="./src/JSXTransformer.js" charset="utf-8"></script>
+        <script src="./dist/Acalon.js" charset="utf-8"></script>
+        <script type="text/jsx">
+            var HelloMessage = React.createClass({
+
+                getInitialState: function () {
+                    return {
+                        name: this.props.name||'Max',
+                    };
+                },
+                render(){
+                    return (
+                               <div>
+                                   <p>{'hello '+this.state.name}</p>
+                               </div>
+                    );
+                }
+            });
+            var ShowDemo = Acalon.ShowDemo;
+            React.render(
+                <ShowDemo name='vivian'/>,
+                document.getElementById('app')
+            );
+        </script>
+    </body>
+</html>
